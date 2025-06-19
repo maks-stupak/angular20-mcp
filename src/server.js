@@ -16,6 +16,9 @@ await registerFolder(server, 'style-guides', data('style-guides'));
 await registerFolder(server, 'component-examples', data('components'), 'text/plain');
 await registerFolder(server, 'articles', data('articles'));
 
+await registerFolder(server, 'angular-llms-index', data('llms.txt'), 'text/plain');
+await registerFolder(server, 'angular-llms-full',  data('llms-full.txt'), 'text/plain');
+
 server.registerPrompt(
   'strict_angular20',
   {

@@ -1,4 +1,4 @@
-import glob from 'glob';
+import { globSync } from 'glob';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
@@ -10,7 +10,7 @@ import path from 'node:path';
  * @param {string} mime
  */
 export async function registerFolder(server, id, folderAbs, mime = 'text/markdown') {
-  const files = glob.sync('**/*.{md,markdown,html,ts}', { cwd: folderAbs });
+  const files = globSync('**/*.{md,markdown,html,ts}', { cwd: folderAbs });
   server.registerResource(
     id,
     `folder://${id}`,
