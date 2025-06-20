@@ -4,9 +4,9 @@
 
 This repo bundles 🔗
 
-* **📚 Resources** – official Angular docs index, style-guides, curated articles, reference components.  
-* **📜 Prompts** – system prompts that force an LLM (via MCP) to obey the guides.  
-* **⚙️ MCP server** – a tiny Node process (stdio) that exposes everything to any IDE supporting **Model Context Protocol** (GitHub Copilot, Cursor, Zed, Claude Desktop, …).
+- **📚 Resources** – official Angular docs index, style-guides, curated articles, reference components.
+- **📜 Prompts** – system prompts that force an LLM (via MCP) to obey the guides.
+- **⚙️ MCP server** – a tiny Node process (stdio) that exposes everything to any IDE supporting **Model Context Protocol** (GitHub Copilot, Cursor, Zed, Claude Desktop, …).
 
 Result → generated / refactored Angular code **always** matches Angular 20 APIs **and** your internal conventions.
 
@@ -55,24 +55,11 @@ Add `mcp-config.json`:
 
 ```jsonc
 {
-  "mcpServers": {
-    "localAngular": {
-      "command": "npx",
-      "args": ["mcp-helper"]
-    }
-  }
-}
-```
-
-or 
-
-```jsonc
-{
   "servers": {
     "localAngular": {
       "type": "stdio",
-      "command": "npx",
-      "args": ["mcp-helper"]
+      "command": "node",
+      "args": ["path-to/mcp-local/src/server.js"]
     }
   }
 }
@@ -82,19 +69,18 @@ or
 
 ## Updating knowledge
 
-* **Docs** – drop new `.md` in `data/angular-docs/` → restart server.  
-* **Style-guides** – edit files in `data/style-guides/`, update list in `load-style-guides.js`.  
-* **Examples / articles** – any `*.md`, `*.ts`, `*.html` auto-registered.
+- **Docs** – drop new `.md` in `data/angular-docs/` → restart server.
+- **Style-guides** – edit files in `data/style-guides/`, update list in `load-style-guides.js`.
+- **Examples / articles** – any `*.md`, `*.ts`, `*.html` auto-registered.
 
 ---
 
 ## Roadmap
 
-* 🔧 **Style-guide compliance tools** – ESLint-based audit + Markdown report
-* 🔎 **Semantic search** – `searchDocs(query)` returns top relevant paragraphs
-* 🛠️ **Angular CLI wrapper** – expose `ng generate …` via MCP
-* 🧪 **Testing-Library integration** – auto-generate & run tests with `@testing-library/angular`
-* 🛠️ **Style-guide fixer** – one-click rename / re-format to match rules
+- 🔧 **Style-guide compliance tools** – ESLint-based audit + Markdown report
+- 🔎 **Semantic search** – `searchDocs(query)` returns top relevant paragraphs
+- 🛠️ **Angular CLI wrapper** – expose `ng generate …` via MCP
+- 🧪 **Testing-Library integration** – auto-generate & run tests with `@testing-library/angular`
+- 🛠️ **Style-guide fixer** – one-click rename / re-format to match rules
 
 ---
-
