@@ -1,6 +1,6 @@
-# Local Angular 20 MCP Helper
+# Local Angular MCP Helper
 
-> **MCP resources & helpers for modern Angular 20 style-guide–driven code**
+> **MCP server, resources & helpers for modern Angular 20 style-guide–driven code**
 
 This repo bundles 🔗
 
